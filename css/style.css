@@ -1,0 +1,22 @@
+
+header {
+	background-color: #efefef;
+}
+
+header .title {
+	text-align: center;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+	margin-top: 4rem;
+}
+
