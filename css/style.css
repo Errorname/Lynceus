@@ -124,3 +124,17 @@ main .service-featured .content {
 	display: none;
 }
 
+footer {
+	background-color: #efefef;
+}
+
+footer p {
+	padding-top: 1rem;
+	font-style: italic;
+}
+
+footer p a,
+footer p a:hover {
+	color: grey;
+}
+
