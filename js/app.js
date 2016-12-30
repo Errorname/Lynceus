@@ -1,6 +1,9 @@
 
 var app = {
 	container: "#services",
+	container_featured: "#service-featured",
+	
+	featured: null,
 
 	orange_time: 2000,
 	red_time: 5000,
@@ -9,6 +12,22 @@ var app = {
 		var service = new Service(name,link);
 
 		$(this.container).append(service.element);
+	},
+
+	setFeatured: function(service) {
+		this.featured = service;
+		if (service) {
+			$(this.container_featured).html(service.element.html());
+			var self = this;
+			$(this.container_featured).find(".close").on("click",function() {
+				self.setFeatured(null);
+			});
+			$(this.container_featured).find(".show").on("click",function() {
+				$(self.container_featured).find(".content").toggle();
+			});
+		} else {
+			$(this.container_featured).html(null);
+		}
 	}
 };
 
@@ -39,7 +58,11 @@ var Service = function(name, link) {
 };
 
 Service.prototype.loadDOM = function() {
+	var self = this;
 	this.element = $($(this.template).html());
+	this.element.find(".card").on("click",function() {
+		app.setFeatured(self);
+	});
 };
 
 Service.prototype.setDescription = function() {
@@ -48,12 +71,28 @@ Service.prototype.setDescription = function() {
 };
 
 Service.prototype.setColor = function(color) {
+	this.color = color;
 	this.element.find(".color").removeClass("green orange red grey");
 	this.element.find(".color").addClass(color);
 };
 
 Service.prototype.setTime = function(time) {
+	this.time = time;
 	this.element.find(".time").html(time+" ms");
+};
+
+Service.prototype.setHeaders = function(headers) {
+	this.headers = headers;
+	var text = "";
+	for(i in headers) {
+		text += headers[i]+"\n";
+	}
+	this.element.find(".headers").text(text);
+};
+
+Service.prototype.setContent = function(content) {
+	this.content = content;
+	this.element.find(".content").text(content);
 };
 
 Service.prototype.checkStatus = function(callback) {
@@ -82,5 +121,7 @@ Service.prototype.printStatus = function(data) {
         } else {
                 this.setColor("green");
         }
+	this.setHeaders(data.headers);
+	this.setContent(data.content);
 };
 
