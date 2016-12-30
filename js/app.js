@@ -75,9 +75,9 @@ Service.prototype.checkStatus = function(callback) {
 
 Service.prototype.printStatus = function(data) {
 	this.setTime(data.time);
-        if (data.status != 200 || data.time > app.red_time) {
+        if (data.status != 200 || data.time >= app.red_time) {
                 this.setColor("red");
-        } else if (data.time > app.orange_time) {
+        } else if (data.time >= app.orange_time) {
                 this.setColor("orange");
         } else {
                 this.setColor("green");
