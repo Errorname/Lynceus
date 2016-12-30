@@ -123,5 +123,8 @@ Service.prototype.printStatus = function(data) {
         }
 	this.setHeaders(data.headers);
 	this.setContent(data.content);
+	if (this == app.featured) {
+		app.setFeatured(this);
+	}
 };
 
