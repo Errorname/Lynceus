@@ -5,8 +5,8 @@ header {
 
 header .title {
 	text-align: center;
-	padding-top: 4rem;
-	padding-bottom: 4rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 body {
@@ -17,6 +17,41 @@ body {
 
 main {
 	flex: 1 0 auto;
-	margin-top: 4rem;
+	margin-top: 2rem;
+}
+
+main .service {
+	
+}
+
+main .service .description {
+	width: 80%;
+	display: inline-block;
+}
+
+main .service .status {
+	width: 20%;
+	display: inline-block;
+	text-align: right;
+}
+
+main .service .status .color.green {
+	background-color: green;
+}
+
+main .service .status .color.orange {
+	background-color: orange;
+}
+
+main .service .status .color.red {
+	background-color: red;
+}
+
+main .service .status .color.grey {
+	background-color: grey;
+}
+
+main .service .status .time {
+	font-style: italic;
 }
 

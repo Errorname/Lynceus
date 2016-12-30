@@ -6,24 +6,33 @@
 		<link rel="stylesheet" href="css/spectre.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 	<body>
 		<header>
 			<div class="title container grid-960">
 				<h1>Lynceus</h1>
+				<h4>Website monitoring dashboard</h4>
 			</div>
 		</header>
 		<main>
 			<div class="container grid-960">
-				<div class="columns">
-					<div class="column col-4">
-						<div class="card">
-							<div class="card-header">
-								<h4 class="card-title">ErrOrnAmE</h4>
-								<h6 class="card-meta">http://errorna.me</h6>
+				<div class="columns" id="services">
+					<template id="service">
+						<div class="column col-4 service">
+							<div class="card">
+								<div class="card-header"><div class="description">
+									<h4 class="card-title name">--</h4>
+									<h6 class="card-meta link">--</h6>
+								</div><div class="status">
+									<h4 class="card-title">
+										<figure class="avatar avatar-xs color grey"></figure>
+									</h4>
+									<h6 class="card-meta time">--</h6>
+								</div></div>
 							</div>
 						</div>
-					</div>
+					</template>
 				</div>
 			</div>
 		</main>
