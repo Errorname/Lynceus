@@ -2,7 +2,7 @@
 var app = {
 	container: "#services",
 	container_featured: "#service-featured",
-	
+
 	featured: null,
 
 	orange_time: 2000,
@@ -19,6 +19,7 @@ var app = {
 		if (service) {
 			$(this.container_featured).html(service.element.html());
 			var self = this;
+			this.setFeaturedImage(service);
 			$(this.container_featured).find(".close").on("click",function() {
 				self.setFeatured(null);
 			});
@@ -28,15 +29,13 @@ var app = {
 		} else {
 			$(this.container_featured).html(null);
 		}
+	},
+
+	setFeaturedImage: function(service) {
+		$(this.container_featured).find(".screen").attr("src","");
+		$(this.container_featured).find(".screen").attr("src","screener.php?w="+service.link);
 	}
 };
-
-$(document).ready(function() {
-	app.addService("ErrOrnAmE","http://errorna.me");
-	app.addService("Tracetemp","http://tracetemp.com");
-	app.addService("Cultures Pad","https://culturespad.fr");
-	app.addService("Maâtura","https://maatura.fr");
-});
 
 var Service = function(name, link) {
 	this.template = "#service";
@@ -127,4 +126,3 @@ Service.prototype.printStatus = function(data) {
 		app.setFeatured(this);
 	}
 };
-

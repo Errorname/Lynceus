@@ -1,0 +1,5 @@
+{
+    "require": {
+        "microweber/screen": "^1.0"
+    }
+}

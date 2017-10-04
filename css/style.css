@@ -61,6 +61,10 @@ main .service .description {
 	display: inline-block;
 }
 
+main .service .screen {
+	width: 100%;
+}
+
 main .service .status {
 	width: 20%;
 	display: inline-block;
@@ -137,4 +141,3 @@ footer p a,
 footer p a:hover {
 	color: grey;
 }
-

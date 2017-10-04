@@ -6,17 +6,22 @@ Website monitoring dashboard
 
 ### Installation
 
-Register your websites in js/app.js
+Execute the following command
+
+```
+$ composer install
+```
+
+Then, register your websites in js/app.js
 
 ```javascript
 [...]
 
 $(document).ready(function() {
 
-	app.addService("Your Website","http://errorna.me");
+	app.addService("Your Website","https://errorna.me");
 
 });
 
 [...]
 ```
-

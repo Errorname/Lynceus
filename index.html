@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Lynceus</title>
-		
-		<meta charset="utf8">		
+
+		<meta charset="utf8">
 
 		<link rel="stylesheet" href="css/spectre.min.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -36,8 +36,9 @@
 								</div><i class="close">&#x274c;</i></div>
 								<div class="card-body">
 									<div class="card-content">
+										<img class="screen">
 										<h5>Headers:</h5>
-										<pre class="headers">oifzonoinfez</pre>
+										<pre class="headers">--</pre>
 										<h5>Content: <span class="show">show/hide</span></h5>
 										<pre class="content">truc</pre>
 									</div>
@@ -54,5 +55,13 @@
 				<p>Find me on <a href="http://github.com/ErrOrnAmE" target="_blank">Github</a></p>
 			</div>
 		</footer>
+		<script>
+			$(document).ready(function() {
+				app.addService("ErrOrnAmE","https://errorna.me");
+				app.addService("Tracetemp","https://tracetemp.com");
+				app.addService("Cultures Pad","https://culturespad.fr");
+				app.addService("Maâtura","https://maatura.fr");
+			});
+		</script>
 	</body>
 </html>

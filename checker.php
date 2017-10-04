@@ -7,7 +7,7 @@ if (isset($_POST["link"])) {
 		"headers" => "null",
 		"content" => "null",
 	];
-	
+
 	$start_time = round(microtime(true) * 1000);
 	$content = file_get_contents($_POST["link"]);
 	$end_time = round(microtime(true) * 1000);
